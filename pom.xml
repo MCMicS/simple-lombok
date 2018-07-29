@@ -31,15 +31,32 @@
         <finalName>simple-lombok</finalName>
         <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
             <!--<plugins>-->
-                <!--<plugin>-->
-                    <!--<artifactId>maven-compiler-plugin</artifactId>-->
-                    <!--<version>3.7.0</version>-->
-                    <!--<configuration>-->
-                        <!--<source>${java.version}</source>-->
-                        <!--<target>${java.version}</target>-->
-                    <!--</configuration>-->
-                <!--</plugin>-->
+            <!--<plugin>-->
+            <!--<artifactId>maven-compiler-plugin</artifactId>-->
+            <!--<version>3.7.0</version>-->
+            <!--<configuration>-->
+            <!--<source>${java.version}</source>-->
+            <!--<target>${java.version}</target>-->
+            <!--</configuration>-->
+            <!--</plugin>-->
             <!--</plugins>-->
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>3.7.0</version>
+                    <configuration>
+                        <release>10</release>
+                    </configuration>
+                    <dependencies>
+                        <dependency>
+                            <groupId>org.ow2.asm</groupId>
+                            <artifactId>asm</artifactId>
+                            <version>6.2</version> <!-- Use newer version of ASM -->
+                        </dependency>
+                    </dependencies>
+                </plugin>
+            </plugins>
         </pluginManagement>
     </build>
 

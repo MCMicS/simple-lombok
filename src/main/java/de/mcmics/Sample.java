@@ -13,8 +13,9 @@ import lombok.extern.java.Log;
 public class Sample {
 
     private final String name;
+    private final String title;
 
     public Sample() {
-        this("Sample");
+        this("Sample", "Title");
     }
 }

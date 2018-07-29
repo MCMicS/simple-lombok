@@ -7,6 +7,7 @@
     <groupId>de.mcmics</groupId>
     <artifactId>simple-lombok</artifactId>
     <version>0.0.1-SNAPSHOT</version>
+    <packaging>jar</packaging>
 
 
     <properties>
@@ -47,6 +48,14 @@
                     <version>3.7.0</version>
                     <configuration>
                         <release>10</release>
+
+                        <annotationProcessorPaths>
+                            <path>
+                                <groupId>org.projectlombok</groupId>
+                                <artifactId>lombok</artifactId>
+                                <version>${lombok.version}</version>
+                            </path>
+                        </annotationProcessorPaths>
                     </configuration>
                     <dependencies>
                         <dependency>

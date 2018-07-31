@@ -18,4 +18,8 @@ public class Sample {
     public Sample() {
         this("Sample", "Title");
     }
+
+    String callMe() {
+        return getName() + getTitle();
+    }
 }

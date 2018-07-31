@@ -1,1 +1,5 @@
 execute with: java -p target\simple-lombok.jar -m simple.lombok/de.mcmics.Application
+
+javac -cp .\lib\lombok-1.18.2.jar -p .\lib\lombok-1.18.2.jar -d .\javac -g --release 10 '@javac.conf'
+javac -cp .\lib\lombok-1.18.2.jar -d .\javac -g --release 10 '@javac.conf'
+

@@ -1,8 +1,8 @@
-package de.mcmics;/*
+/*
  * Copyright (c) 2018.
  * Created by MCMicS
  */
-
+package de.mcmics;
 import lombok.AllArgsConstructor;
 import lombok.Value;
 import lombok.extern.java.Log;

@@ -15,7 +15,7 @@
         <java.version>10</java.version>
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
-        <lombok.version>1.18.2</lombok.version>
+        <lombok.version>1.18.3</lombok.version>
         <org.mapstruct.version>1.2.0.Final</org.mapstruct.version>
     </properties>
 
@@ -55,10 +55,12 @@
                     <configuration>
                         <release>10</release>
 
-<!--                        <annotationProcessors>
+                        <annotationProcessors>
                             <annotationProcessor>lombok.launch.AnnotationProcessorHider$AnnotationProcessor</annotationProcessor>
                             <annotationProcessor>lombok.launch.AnnotationProcessorHider$ClaimingProcessor</annotationProcessor>
-                        </annotationProcessors>-->
+                            lombok.launch.AnnotationProcessorHider$AnnotationProcessor
+                            lombok.launch.AnnotationProcessorHider$ClaimingProcessor
+                        </annotationProcessors>
 
                         <!--<annotationProcessorPaths>-->
                             <!--<path>-->

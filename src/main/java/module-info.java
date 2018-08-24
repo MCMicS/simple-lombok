@@ -1,4 +1,4 @@
-module simple.lombok {
+module simplelombok {
     requires static lombok;
     requires java.logging;
 }

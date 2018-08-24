@@ -27,64 +27,50 @@
             <version>${lombok.version}</version>
             <scope>provided</scope>
         </dependency>
-        <!--<dependency>-->
-            <!--<groupId>org.mapstruct</groupId>-->
-            <!--<artifactId>mapstruct</artifactId> &lt;!&ndash; OR use this with Java 8 and beyond: <artifactId>mapstruct-jdk8</artifactId> &ndash;&gt;-->
-            <!--<version>${org.mapstruct.version}</version>-->
-        <!--</dependency>-->
     </dependencies>
 
     <build>
-        <finalName>simple-lombok</finalName>
-        <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
-            <!--<plugins>-->
-            <!--<plugin>-->
-            <!--<artifactId>maven-compiler-plugin</artifactId>-->
-            <!--<version>3.7.0</version>-->
-            <!--<configuration>-->
-            <!--<source>${java.version}</source>-->
-            <!--<target>${java.version}</target>-->
-            <!--</configuration>-->
-            <!--</plugin>-->
-            <!--</plugins>-->
-            <plugins>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-compiler-plugin</artifactId>
-                    <version>3.8.0</version>
-                    <configuration>
-                        <release>10</release>
-
-                        <annotationProcessors>
-                            <annotationProcessor>lombok.launch.AnnotationProcessorHider$AnnotationProcessor</annotationProcessor>
-                            <annotationProcessor>lombok.launch.AnnotationProcessorHider$ClaimingProcessor</annotationProcessor>
-                            lombok.launch.AnnotationProcessorHider$AnnotationProcessor
-                            lombok.launch.AnnotationProcessorHider$ClaimingProcessor
-                        </annotationProcessors>
-
-                        <!--<annotationProcessorPaths>-->
-                            <!--<path>-->
-                                <!--<groupId>org.projectlombok</groupId>-->
-                                <!--<artifactId>lombok</artifactId>-->
-                                <!--<version>${lombok.version}</version>-->
-                            <!--</path>-->
-                            <!--<path>-->
-                                <!--<groupId>org.mapstruct</groupId>-->
-                                <!--<artifactId>mapstruct-processor</artifactId>-->
-                                <!--<version>${org.mapstruct.version}</version>-->
-                            <!--</path>-->
-                        <!--</annotationProcessorPaths>-->
-                    </configuration>
-                    <dependencies>
-                        <dependency>
-                            <groupId>org.ow2.asm</groupId>
-                            <artifactId>asm</artifactId>
-                            <version>6.2</version> <!-- Use newer version of ASM -->
-                        </dependency>
-                    </dependencies>
-                </plugin>
-            </plugins>
-        </pluginManagement>
+        <plugins>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.0</version>
+                <configuration>
+                    <failOnWarning>true</failOnWarning>
+                    <release>10</release>
+                    <showDeprecation>true</showDeprecation>
+                    <showWarnings>true</showWarnings>
+                    <release>10</release>
+                    <verbose>true</verbose>
+                    <annotationProcessorPaths>
+                        <path>
+                            <groupId>org.projectlombok</groupId>
+                            <artifactId>lombok</artifactId>
+                            <version>${lombok.version}</version>
+                        </path>
+                    </annotationProcessorPaths>
+                </configuration>
+                <!--<dependencies>-->
+                    <!--<dependency>-->
+                        <!--<groupId>org.ow2.asm</groupId>-->
+                        <!--<artifactId>asm</artifactId>-->
+                        <!--<version>6.2</version> &lt;!&ndash; Use newer version of ASM &ndash;&gt;-->
+                    <!--</dependency>-->
+                <!--</dependencies>-->
+            </plugin>
+            <plugin>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok-maven-plugin</artifactId>
+                <version>1.18.0.0</version>
+                <executions>
+                    <execution>
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <goal>delombok</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
     </build>
 
 </project>

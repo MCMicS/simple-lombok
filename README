@@ -1,4 +1,3 @@
-execute with: java -p target\simple-lombok.jar -m simple.lombok/de.mcmics.Application
 compile with: javac ''@options.conf' ''@javac.conf'
 
 

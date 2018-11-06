@@ -11,4 +11,9 @@ javac --module-path .\lib\lombok.jar -d .\javac -g --release 10 @javac.conf
 javac -verbose -J--add-modules=ALL-SYSTEM -p .\lib\lombok.jar -d .\javac -g --release 10 @javac.conf
 
 
-javac --processor-path
+javac --processor-path .\lib\lombok.jar -p .\lib\lombok.jar -d .\javac @javac.conf
+
+
+mvn
+javac -d "D:\IntelliJ\simple-lombok\target\classes" --module-path ".\target\classes;.\lib\lombok.jar;" -sourcepath ".\src\main\java;.\target\generated-sources\annotations;" -s ".\target\generated-sources\annotations" -processorpath ".\lib\lombok.jar;" -g -nowarn --release 10 -encoding UTF-8 @javac.conf
+javac -d ".\target\classes" --module-path ".\target\classes;.\lib\lombok.jar;" -s ".\target\generated-sources\annotations" -processorpath ".\lib\lombok.jar;" -g -nowarn --release 10 -encoding UTF-8 @javac.conf

@@ -1,4 +1,6 @@
-compile with: javac ''@options.conf' ''@javac.conf'
+compile with:
+javac '@options.conf' '@javac.conf'
+javac @options_nonModule.conf @javac.conf
 
 
 Tryouts:

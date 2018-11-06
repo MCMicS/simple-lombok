@@ -3,9 +3,12 @@ compile with: javac ''@options.conf' ''@javac.conf'
 
 
 Tryouts:
-javac -cp .\lib\lombok-1.18.2.jar -p .\lib\lombok-1.18.2.jar -d .\javac -g --release 10 '@javac.conf'
-javac -cp .\lib\lombok-1.18.2.jar -d .\javac -g --release 10 '@javac.conf'
+javac -cp .\lib\lombok.jar -p .\lib\lombok.jar -d .\javac -g --release 10 '@javac.conf'
+javac -cp .\lib\lombok.jar -d .\javac -g --release 10 '@javac.conf'
 
-javac --processor-module-path .\lib\lombok-1.18.2.jar -processor lombok.launch.AnnotationProcessorHider.AnnotationProcessor --module-path .\lib\lombok-1.18.2.jar -d .\javac -g --release 10 @javac.conf
-javac --module-path .\lib\lombok-1.18.2.jar -d .\javac -g --release 10 @javac.conf
-javac -verbose -J--add-modules=ALL-SYSTEM -p .\lib\lombok-1.18.2.jar -d .\javac -g --release 10 @javac.conf
+javac --processor-module-path .\lib\lombok.jar -processor lombok.launch.AnnotationProcessorHider.AnnotationProcessor --module-path .\lib\lombok.jar -d .\javac -g --release 10 @javac.conf
+javac --module-path .\lib\lombok.jar -d .\javac -g --release 10 @javac.conf
+javac -verbose -J--add-modules=ALL-SYSTEM -p .\lib\lombok.jar -d .\javac -g --release 10 @javac.conf
+
+
+javac --processor-path
